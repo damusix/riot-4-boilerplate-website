@@ -1,29 +1,92 @@
 ---
 id: get-started
-title: Latin-ish
+title: Get Started
 sidebar_label: Example Page
 ---
 
-Check the [documentation](https://docusaurus.io) for how to use Docusaurus.
+The purpose for making this project is to dramatically reduce the time it takes between "I want to use Riot" and using Riot. Lets get started making your first single page Riot app!
 
-## Lorem
+## About this boilerplate
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus elementum massa eget nulla aliquet sagittis. Proin odio tortor, vulputate ut odio in, ultrices ultricies augue. Cras ornare ultrices lorem malesuada iaculis. Etiam sit amet libero tempor, pulvinar mauris sed, sollicitudin sapien.
+1. There are a handful of things that are prepared for you such node aliases and build scripts
+1. The project builds out to static files that you can host anywhere
+1. It comes with a deploy script to deploy to AWS using terraform
+1. This boilerplate is for you to make your own. Feel free to strip away or add anything you do(n't) need or like!
 
-## Mauris In Code
+## Installation
 
+``` bash
+git clone https://github.com/damusix/riot-4-boilerplate MY_PROJECT
+cd MY_PROJECT
+npm install
 ```
-Mauris vestibulum ullamcorper nibh, ut semper purus pulvinar ut. Donec volutpat orci sit amet mauris malesuada, non pulvinar augue aliquam. Vestibulum ultricies at urna ut suscipit. Morbi iaculis, erat at imperdiet semper, ipsum nulla sodales erat, eget tincidunt justo dui quis justo. Pellentesque dictum bibendum diam at aliquet. Sed pulvinar, dolor quis finibus ornare, eros odio facilisis erat, eu rhoncus nunc dui sed ex. Nunc gravida dui massa, sed ornare arcu tincidunt sit amet. Maecenas efficitur sapien neque, a laoreet libero feugiat ut.
+
+Remove original git info and make it your own
+``` bash
+rm -rf .git
+git init
 ```
 
-## Nulla
+## Start your project!
+``` bash
+npm start
+open http://localhost:3000
+```
 
-Nulla facilisi. Maecenas sodales nec purus eget posuere. Sed sapien quam, pretium a risus in, porttitor dapibus erat. Sed sit amet fringilla ipsum, eget iaculis augue. Integer sollicitudin tortor quis ultricies aliquam. Suspendisse fringilla nunc in tellus cursus, at placerat tellus scelerisque. Sed tempus elit a sollicitudin rhoncus. Nulla facilisi. Morbi nec dolor dolor. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Cras et aliquet lectus. Pellentesque sit amet eros nisi. Quisque ac sapien in sapien congue accumsan. Nullam in posuere ante. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Proin lacinia leo a nibh fringilla pharetra.
+And that's it! You can get started building a Riot app.
 
-## Orci
 
-Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Proin venenatis lectus dui, vel ultrices ante bibendum hendrerit. Aenean egestas feugiat dui id hendrerit. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Curabitur in tellus laoreet, eleifend nunc id, viverra leo. Proin vulputate non dolor vel vulputate. Curabitur pretium lobortis felis, sit amet finibus lorem suscipit ut. Sed non mollis risus. Duis sagittis, mi in euismod tincidunt, nunc mauris vestibulum urna, at euismod est elit quis erat. Phasellus accumsan vitae neque eu placerat. In elementum arcu nec tellus imperdiet, eget maximus nulla sodales. Curabitur eu sapien eget nisl sodales fermentum.
+## Deployment
 
-## Phasellus
+To prepare your app for deployment, assets will build into `assets/` folder:
 
-Phasellus pulvinar ex id commodo imperdiet. Praesent odio nibh, sollicitudin sit amet faucibus id, placerat at metus. Donec vitae eros vitae tortor hendrerit finibus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Quisque vitae purus dolor. Duis suscipit ac nulla et finibus. Phasellus ac sem sed dui dictum gravida. Phasellus eleifend vestibulum facilisis. Integer pharetra nec enim vitae mattis. Duis auctor, lectus quis condimentum bibendum, nunc dolor aliquam massa, id bibendum orci velit quis magna. Ut volutpat nulla nunc, sed interdum magna condimentum non. Sed urna metus, scelerisque vitae consectetur a, feugiat quis magna. Donec dignissim ornare nisl, eget tempor risus malesuada quis.
+``` bash
+npm run build
+```
+
+Then, once you have setup your `project.tfvars`, you can deploy your website.
+
+``` bash
+npm run deploy
+```
+
+For more information on how to setup deployment, see [deployment guide](deployment.md).
+
+
+## What this boilerplate comes with
+
+I've added a series of tools and libraries that I personally use to help facilitate development. I prefer minimalism and like to keep to DOM standards as much as possible, hence why I use Riot in the first place and have been using it for years. To me, project size matters in order to offer the best possible experience, and in order to accomplish this, one must use simple but effective tools that do not add much size to your build package.
+
+- SASS starter kit based on [Milligram IO](http://milligram.io)
+- [BiancoJS](https://github.com/biancojs/bianco) - A great utility for DOM events, HTML element style and attribute manipulation, viewport, pointer events, etc.
+- [AnimeJS](https://animejs.com) - Minimal but awesome animation library
+- [Fontawesome 5](http://fontawesome.io) - Best icons on the net
+- [AxiosJS](https://github.com/axios/axios) - AJAX support
+- [Final Form](https://final-form.org/) + [Riot Final Form](https://github.com/damusix/riot-final-form) - Manage forms and form state using modern tools. I have also created a wrapper for riot components to use FF.
+- [Riot Meiosis](https://github.com/damusix/riot-meiosis) - State management based on streams.
+- [Riot Route]((https://github.com/riot/route/tree/dev).) - Official Riot 4 router
+- [Jest](https://jestjs.io/) - Test using JSDOM and Jest
+
+
+## Shortcuts (node aliases)
+
+When projects scale out, you tend to get into a sort of hell of nested imports. In order to mitigate that, these shortcuts were added for convenience. Instead of doing `import X from '../../../../../x`, you start from an alias `import X from '@/x'`.
+
+- `~/*` aliases `src/*`
+- `+/*` aliases `src/shared/*`
+- `@/*` aliases `src/components/*`
+- `#/*` aliases `src/utils/*`
+
+```js
+// "~" is "./src"
+import Store from "~/store"
+
+// "+" is "./src/shared"
+import Alerts from "+/alerts/Alerts"
+
+// "@" is "./src/components"
+import TestStuff from "@/test.riot";
+
+// "#" is "./src/utils"
+import KeyCodes from "#/keycodes";
+```

@@ -23,8 +23,8 @@ const users = [
 const siteConfig = {
   title: 'Riot 4 SPA Boilerplate', // Title for your website.
   tagline: 'A website for testing',
-  url: 'https://riot-4-spa.github.io', // Your website URL
-  baseUrl: '/', // Base URL for your project */
+  url: 'https://damusix.github.io', // Your website URL
+  baseUrl: '/riot-4-boilerplate/', // Base URL for your project */
   // For github.io type URLs, you would set the url and baseUrl like:
   //   url: 'https://facebook.github.io',
   //   baseUrl: '/test-site/',
@@ -39,7 +39,7 @@ const siteConfig = {
   // For no header links in the top nav bar -> headerLinks: [],
   headerLinks: [
     {doc: 'get-started', label: 'Get Started'},
-    {doc: 'doc-1', label: 'Docs'},
+    {doc: 'setup', label: 'Docs'},
     {page: 'help', label: 'Help'},
     {blog: true, label: 'Blog'},
   ],

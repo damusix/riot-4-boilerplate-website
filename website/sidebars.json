@@ -1,13 +1,18 @@
 {
   "docs": {
-    "Docusaurus": [
-      "doc-1",
-      "getting-started"
+    "Components": [
+      "setup",
+      "routes",
+      "components",
+      "styles",
+      "actions",
+      "tests",
+      "deployment"
     ],
-    "First Category": ["doc2"],
+    "Utilities": [
+      "events",
+      "storage"
+    ],
     "Second Category": ["doc3"]
-  },
-  "docs-other": {
-    "First Category": ["doc4", "doc5"]
   }
 }

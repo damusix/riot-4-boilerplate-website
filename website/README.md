@@ -30,9 +30,9 @@ Your project file structure should look something like this
 ```
 my-docusaurus/
   docs/
-    doc-1.md
-    doc-2.md
-    doc-3.md
+    1.md
+    2.md
+    3.md
   website/
     blog/
       2016-3-11-oldest-post.md
@@ -54,7 +54,7 @@ my-docusaurus/
 
 Edit docs by navigating to `docs/` and editing the corresponding document:
 
-`docs/doc-to-be-edited.md`
+`docs/to-be-edited.md`
 
 ```markdown
 ---
