@@ -29,12 +29,6 @@ class HomeSplash extends React.Component {
       </div>
     );
 
-    const Logo = props => (
-      <div className="projectLogo">
-        <img src={props.img_src} alt="Project Logo" />
-      </div>
-    );
-
     const ProjectTitle = () => (
       <h2 className="projectTitle">
         {siteConfig.title}
@@ -60,13 +54,11 @@ class HomeSplash extends React.Component {
 
     return (
       <SplashContainer>
-        <Logo img_src={`${baseUrl}img/undraw_monitor.svg`} />
+        {/* <Logo img_src={`${baseUrl}img/undraw_monitor.svg`} /> */}
         <div className="inner">
           <ProjectTitle siteConfig={siteConfig} />
           <PromoSection>
-            <Button href="#try">Try It Out</Button>
-            <Button href={docUrl('doc1.html')}>Example Link</Button>
-            <Button href={docUrl('doc2.html')}>Example Link 2</Button>
+            <Button href={docUrl('get-started')}>Get Started in under 5 Minutes!</Button>
           </PromoSection>
         </div>
       </SplashContainer>
@@ -85,124 +77,94 @@ class Index extends React.Component {
         id={props.id}
         background={props.background}>
         <GridBlock
-          align="center"
+          align={ props.align || "center" }
           contents={props.children}
           layout={props.layout}
         />
       </Container>
     );
 
+    const StateAndRouter = () => (
+      <Block layout="fourColumn">
+        {[
+          {
+            content: 'Comes with state management library that provides functionality similar to `redux-react`, along with devtools to examine your state.',
+            image: `${baseUrl}img/undraw_operating_system.svg`,
+            imageAlign: 'top',
+            title: 'State Management',
+          },
+          {
+            content: 'Easily manage forms with Final Form and a HOC wrapper for Riot components.',
+            image: `${baseUrl}img/undraw_fill_forms_yltj.svg`,
+            imageAlign: 'top',
+            title: 'Final Form',
+          },
+          {
+            content: 'Official Riot 4 router is built in, already configured and ready to use.',
+            image: `${baseUrl}img/undraw_tabs_jf82.svg`,
+            imageAlign: 'top',
+            title: 'Riot Router',
+          }
+        ]}
+      </Block>
+    );
+
     const FeatureCallout = () => (
       <div
         className="productShowcaseSection paddingBottom"
         style={{textAlign: 'center'}}>
-        <h2>Feature Callout</h2>
-        <MarkdownBlock>These are features of this project</MarkdownBlock>
+        <h2>Batteries Included Boilerplate!</h2>
+        <p>Some of the best tools you will need to build web apps already come built in:
+          &nbsp;<b>AnimeJS</b> - <b>Fontawesome 5</b> - <b>Jest</b> - <b>Webpack</b> - <b>Dev Server</b>
+          <br />
+          <br />
+          <a class='button' href="/riot-4-boilerplate/docs/get-started#what-this-boilerplate-comes-with">and more!</a>
+        </p>
       </div>
     );
 
-    const TryOut = () => (
-      <Block id="try">
+    const DeployToCloud = () => (
+      <Block background="light" align="left">
         {[
           {
             content:
-              'To make your landing page more attractive, use illustrations! Check out ' +
-              '[**unDraw**](https://undraw.co/) which provides you with customizable illustrations which are free to use. ' +
-              'The illustrations you see on this page are from unDraw.',
+              'Comes with a Dockerfile, terraform scripts, and a deploy script to make your app live, fast! ' +
+              'Automatically create the necessary infrastructure to deploy your app in a simple and cost effective way.' +
+              '<br /><br />Deploying is as easy as `npm run deploy`!' +
+              '<br /><br /><a href="/riot-4-boilerplate/docs/deployment" class="button">Find out how</a>',
+            image: `${baseUrl}img/undraw_cloud_hosting_aodd.svg`,
+            imageAlign: 'right',
+            title: 'Deploy to the Cloud',
+          },
+        ]}
+      </Block>
+    );
+
+    const SetupGuide = () => (
+      <Block id="try" align="left">
+        {[
+          {
+            content:
+              'Software development should be convenient, organized and scalable. ' +
+              'And that\'s exactly how this project has been designed. ' +
+              'This documentation details the how and the why.' +
+              '<br /><br /><a href="/riot-4-boilerplate/docs/setup" class="button">Setup Guide</a>',
             image: `${baseUrl}img/undraw_code_review.svg`,
             imageAlign: 'left',
-            title: 'Wonderful SVG Illustrations',
+            title: 'Structured for Scale',
           },
         ]}
       </Block>
     );
-
-    const Description = () => (
-      <Block background="dark">
-        {[
-          {
-            content:
-              'This is another description of how this project is useful',
-            image: `${baseUrl}img/undraw_note_list.svg`,
-            imageAlign: 'right',
-            title: 'Description',
-          },
-        ]}
-      </Block>
-    );
-
-    const LearnHow = () => (
-      <Block background="light">
-        {[
-          {
-            content:
-              'Each new Docusaurus project has **randomly-generated** theme colors.',
-            image: `${baseUrl}img/undraw_youtube_tutorial.svg`,
-            imageAlign: 'right',
-            title: 'Randomly Generated Theme Colors',
-          },
-        ]}
-      </Block>
-    );
-
-    const Features = () => (
-      <Block layout="fourColumn">
-        {[
-          {
-            content: 'This is the content of my feature',
-            image: `${baseUrl}img/undraw_react.svg`,
-            imageAlign: 'top',
-            title: 'Feature One',
-          },
-          {
-            content: 'The content of my second feature',
-            image: `${baseUrl}img/undraw_operating_system.svg`,
-            imageAlign: 'top',
-            title: 'Feature Two',
-          },
-        ]}
-      </Block>
-    );
-
-    const Showcase = () => {
-      if ((siteConfig.users || []).length === 0) {
-        return null;
-      }
-
-      const showcase = siteConfig.users
-        .filter(user => user.pinned)
-        .map(user => (
-          <a href={user.infoLink} key={user.infoLink}>
-            <img src={user.image} alt={user.caption} title={user.caption} />
-          </a>
-        ));
-
-      const pageUrl = page => baseUrl + (language ? `${language}/` : '') + page;
-
-      return (
-        <div className="productShowcaseSection paddingBottom">
-          <h2>Who is Using This?</h2>
-          <p>This project is used by all these people</p>
-          <div className="logos">{showcase}</div>
-          <div className="more-users">
-            <a className="button" href={pageUrl('users.html')}>
-              More {siteConfig.title} Users
-            </a>
-          </div>
-        </div>
-      );
-    };
 
     return (
       <div>
         <HomeSplash siteConfig={siteConfig} language={language} />
         <div className="mainContainer">
-          <Features />
+          <StateAndRouter />
           <FeatureCallout />
-          <LearnHow />
-          <TryOut />
-          <Description />
-          <Showcase />
+          <SetupGuide />
+          <DeployToCloud />
         </div>
       </div>
     );

@@ -18,7 +18,7 @@ In order for deployments to work you need to have `terraform` and `aws-cli` setu
 
 ## Setup Terraform
 
-Before we get started, we need to setup some terraform files in order to build our infrastructure. There is a `project.auto.tfvars.sample` located at the root of the project. Rename this file to `project.auto.tfvars` and lets get started.
+Before we get started, we need to setup some terraform files in order to build our infrastructure. There is a `project.tfvars-sample` located at the root of the project. Rename this file to `project.auto.tfvars` and lets get started.
 
 In `project.auto.tfvars` you should find the following:
 

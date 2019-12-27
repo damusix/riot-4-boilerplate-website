@@ -30,7 +30,6 @@ git init
 ## Start your project!
 ``` bash
 npm start
-open http://localhost:3000
 ```
 
 And that's it! You can get started building a Riot app.
@@ -44,7 +43,7 @@ To prepare your app for deployment, assets will build into `assets/` folder:
 npm run build
 ```
 
-Then, once you have setup your `project.tfvars`, you can deploy your website.
+Then, once you have setup your `project.tfvars` and created your infrastructure, you can deploy your website.
 
 ``` bash
 npm run deploy

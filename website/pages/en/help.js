@@ -22,12 +22,12 @@ function Help(props) {
   const supportLinks = [
     {
       content: `Learn more using the [documentation on this site.](${docUrl(
-        'doc1.html',
+        'setup',
       )})`,
       title: 'Browse Docs',
     },
     {
-      content: 'Ask questions about the documentation and project',
+      content: '[Ask questions](https://discord.gg/PagXe5Y) about the documentation and project',
       title: 'Join the community',
     },
     {
@@ -43,7 +43,7 @@ function Help(props) {
           <header className="postHeader">
             <h1>Need help?</h1>
           </header>
-          <p>This project is maintained by a dedicated group of people.</p>
+          <p>This project is maintained by <a href="https://github.com/damusix">@damusix</a>. Talk to me on discord if you need help or want to contribute to this project.</p>
           <GridBlock contents={supportLinks} layout="threeColumn" />
         </div>
       </Container>

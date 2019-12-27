@@ -22,7 +22,8 @@ const users = [
 
 const siteConfig = {
   title: 'Riot 4 SPA Boilerplate', // Title for your website.
-  tagline: 'A website for testing',
+  disableHeaderTitle: true,
+  tagline: 'A complete starting point for building a Riot single page app',
   url: 'https://damusix.github.io', // Your website URL
   baseUrl: '/riot-4-boilerplate/', // Base URL for your project */
   // For github.io type URLs, you would set the url and baseUrl like:
@@ -48,14 +49,14 @@ const siteConfig = {
   users,
 
   /* path to images for header/footer */
-  headerIcon: 'img/favicon.ico',
-  footerIcon: 'img/favicon.ico',
-  favicon: 'img/favicon.ico',
+  headerIcon: 'img/riot-logo.svg',
+  footerIcon: 'img/riot-logo.svg',
+  favicon: 'img/favicon.png',
 
   /* Colors for website */
   colors: {
-    primaryColor: '#a08286',
-    secondaryColor: '#705b5d',
+    primaryColor: '#ED1846',
+    secondaryColor: '#a1102f',
   },
 
   /* Custom fonts for website */
